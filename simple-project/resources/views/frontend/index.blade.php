@@ -12,17 +12,34 @@
                             <a href="{{url('categories/create')}}" class="btn btn-primary float-end">Add Category</a></h4>
                         </div>
                         <div class="card-body">
-
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <td>ID</td>
+                                    <td>Name</td>
+                                    <td>Description</td>
+                                    <td>Is Active</td>
+                                    <td>Action</td>
+                                </thead>
+                                <tbody>
+                                    @foreach($categories as $item)
+                                    <tr>
+                                        <td>{{$item->id}}</td>
+                                        <td>{{$item->name}}</td>
+                                        <td>{{$item->description}}</td>
+                                        <td>{{$item->is_active==1?'True':'False'}}</td>
+                                        <td>
+                                            <a href="">Edit</a>
+                                            <a href="">Delete</a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <x-slot:scripts>
-        <script>
-            console.log('Hello')
-        </script>
-    </x-slot:scripts>
 
 </x-my-layout>
