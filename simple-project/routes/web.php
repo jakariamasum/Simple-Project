@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('categories',[App\Http\Controllers\CategoryController::class,'index']);
-
-  
+Route::get('categories/create',[App\Http\Controllers\CategoryController::class,'create']);
+Route::post('categories',[App\Http\Controllers\CategoryController::class,'store']);
 Route::get('/', function () {
     return view('frontend.index');
 });
