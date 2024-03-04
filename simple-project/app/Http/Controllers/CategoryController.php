@@ -51,4 +51,12 @@ class CategoryController extends Controller
         ]);
         return redirect()->back()->with('status','Category updated');
     }
+    public function destroy(int $id)
+    {
+        $category= Category::findOrFail($id);
+        // return $category;
+        $category->delete();
+        return redirect()->back()->with('status','Category updated');
+
+    }
 }
